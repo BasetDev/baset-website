@@ -2802,7 +2802,7 @@
     };
 
     // پایگاه داده دایرکتوری با ۳ دسته‌بندی اصلی: اخبار (news)، مقالات (articles)، آموزش (tutorials)
-                            const directoryItems = [
+                                const directoryItems = [
       {
         id: "realcompanion-memory-benchmark",
         type: "article",
@@ -2811,52 +2811,54 @@
         dateShamsi: "۱۴ مهر ۱۴۰۵",
         dateGregorian: "05 Oct 2026",
         tags: ["هوش_مصنوعی", "ماشین_لرنینگ", "بنچمارک", "معماری_نرم_افزار", "RAG", "RealCompanion"],
+        tagsFa: ["هوش_مصنوعی", "ماشین_لرنینگ", "بنچمارک", "معماری_نرم_افزار", "RAG", "RealCompanion"],
+        tagsEn: ["AI Memory", "Machine Learning", "Benchmark", "Software Architecture", "RAG", "RealCompanion"],
         iconSvg: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>',
         titleFa: "چرا بنچمارک‌های حافظه در هوش مصنوعی ما را سر کار گذاشته‌اند؟ (تحلیل RealCompanion)",
         titleEn: "Why AI Memory Benchmarks Mislead Us: Analysis of the RealCompanion Study",
-        summaryFa: "خیلی از بنچمارک‌های حافظه در هوش مصنوعی ما را سر کار گذاشته‌اند، چون روی داده‌های مصنوعی و سوالات ساختگی تست می‌شوند نه مکالمات واقعی انسان‌ها.",
-        summaryEn: "خیلی از بنچمارک‌های حافظه در هوش مصنوعی ما را سر کار گذاشته‌اند، چون روی داده‌های مصنوعی و سوالات ساختگی تست می‌شوند نه مکالمات واقعی انسان‌ها.",
+        summaryFa: "تحلیل ۲۷ هزار پیام واقعی نشان می‌دهد پنجره پیام‌های اخیر جواب ۹۵.۹٪ پیام‌ها را دارد، اما برای حافظه بلندمدت کارایی تا ۲.۲٪ سقوط می‌کند!",
+        summaryEn: "Analysis of 27k real-world chat messages reveals recency windows cover 95.9% of queries, but true long-term retrieval plunges to 2.2%.",
         contentFa: `
 <p>خیلی از بنچمارک‌های حافظه در هوش مصنوعی ما را سر کار گذاشته‌اند، چون روی داده‌های مصنوعی و سوالات ساختگی تست می‌شوند نه مکالمات واقعی انسان‌ها.</p>
-<p>به تازگی پژوهشگران در مقاله‌ای به نام <strong>RealCompanion<strong> دست به کار متفاوتی زدند: تحلیل <strong>۲۷,۲۱۸ پیام واقعی<strong> بین ده کاربر و ربات هوش مصنوعی در طول ۱۲۰ روز، همراه با استدلال مرحله‌به‌مرحله برای هر برچسب داده.</p>
+<p>به تازگی پژوهشگران در مقاله‌ای به نام <strong>RealCompanion</strong> دست به کار متفاوتی زدند: تحلیل <strong>۲۷,۲۱۸ پیام واقعی</strong> بین ده کاربر و ربات هوش مصنوعی در طول ۱۲۰ روز، همراه با استدلال مرحله‌به‌مرحله برای هر برچسب داده.</p>
 <h2>سه نتیجه فنی جالب از تحلیل داده‌ها</h2>
 <ol>
-<li>**خطای پنجره پیام‌های اخیر (Recency Window):**</li>
+<li><strong>خطای پنجره پیام‌های اخیر (Recency Window):</strong></li>
 </ol>
 <p>پنجره پیام‌های اخیر جواب ۹۵.۹ درصد پیام‌ها را در خود دارد، اما برای پیام‌هایی که واقعاً به حافظه دور نیاز دارند، کارایی این پنجره تا ۲.۲ درصد سقوط می‌کند. در واقع ۹۶ درصد بهره‌ای که از بازیابی حافظه می‌بینیم، ناشی از پیام‌هایی است که اصلاً نیازی به حافظه دور نداشتند!</p>
 <ol>
-<li>**عدم توانایی مدل‌ها در تشخیص زمان بازیابی:**</li>
+<li><strong>عدم توانایی مدل‌ها در تشخیص زمان بازیابی:</strong></li>
 </ol>
 <p>هیچ مدلی نتوانست در مکالمه واقعی تشخیص دهد «چه زمانی» به سراغ حافظه گذشته برود. در بنچمارک‌های قبلی، خود سوالات مصنوعی سرنخ را لو می‌دادند.</p>
 <ol>
-<li>**۳۱ برابر اختلاف هزینه با بازدهی یکسان:**</li>
+<li><strong>۳۱ برابر اختلاف هزینه با بازدهی یکسان:</strong></li>
 </ol>
 <p>سه سیستم معماری مختلف برای بازسازی پرسونا تست شدند و هر سه به امتیاز F1 دقیقاً یکسانی رسیدند؛ اما با ۳۱ برابر اختلاف هزینه در مصرف توکن!</p>
-<div class="callout-quote-box"><strong>سوال برای معماران سیستم:<strong></div>
+<div class="callout-quote-box"><strong>سوال برای معماران سیستم:</strong></div>
 <div class="callout-quote-box">وقتی معیارهای تجمیعی این‌قدر گمراه‌کننده‌اند، شما در عمل چطور بازدهی سیستم‌های حافظه یا RAG را اندازه می‌گیرید؟</div>
-<p>---</p>
-<p>📎 <strong>منبع مقاله در arXiv:<strong> [https://arxiv.org/abs/2610.01780](https://arxiv.org/abs/2610.01780)</p>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>منبع مقاله در arXiv:</strong> <a href="https://arxiv.org/abs/2610.01780" target="_blank" style="color: var(--primary); text-decoration: underline;">https://arxiv.org/abs/2610.01780</a></p>
         `,
         contentEn: `
-<p>خیلی از بنچمارک‌های حافظه در هوش مصنوعی ما را سر کار گذاشته‌اند، چون روی داده‌های مصنوعی و سوالات ساختگی تست می‌شوند نه مکالمات واقعی انسان‌ها.</p>
-<p>به تازگی پژوهشگران در مقاله‌ای به نام <strong>RealCompanion<strong> دست به کار متفاوتی زدند: تحلیل <strong>۲۷,۲۱۸ پیام واقعی<strong> بین ده کاربر و ربات هوش مصنوعی در طول ۱۲۰ روز، همراه با استدلال مرحله‌به‌مرحله برای هر برچسب داده.</p>
-<h2>سه نتیجه فنی جالب از تحلیل داده‌ها</h2>
+<p>Many AI memory benchmarks are fundamentally misleading because they are tested against synthetic data and contrived queries rather than natural, longitudinal human conversations.</p>
+<p>Recently, researchers behind the <strong>RealCompanion</strong> paper took a radically different approach: analyzing <strong>27,218 real-world messages</strong> exchanged between 10 users and AI companions over 120 days, backed by step-by-step reasoning annotations.</p>
+<h2>Three Key Technical Takeaways</h2>
 <ol>
-<li>**خطای پنجره پیام‌های اخیر (Recency Window):**</li>
+<li><strong>The Recency Window Fallacy:</strong></li>
 </ol>
-<p>پنجره پیام‌های اخیر جواب ۹۵.۹ درصد پیام‌ها را در خود دارد، اما برای پیام‌هایی که واقعاً به حافظه دور نیاز دارند، کارایی این پنجره تا ۲.۲ درصد سقوط می‌کند. در واقع ۹۶ درصد بهره‌ای که از بازیابی حافظه می‌بینیم، ناشی از پیام‌هایی است که اصلاً نیازی به حافظه دور نداشتند!</p>
+<p>Recent message windows resolve 95.9% of user inquiries. However, for queries genuinely requiring long-term memory, recency window accuracy plunges down to 2.2%. In essence, 96% of perceived memory retrieval success originates from interactions that never demanded historical context in the first place!</p>
 <ol>
-<li>**عدم توانایی مدل‌ها در تشخیص زمان بازیابی:**</li>
+<li><strong>Inability to Decide 'When' to Retrieve:</strong></li>
 </ol>
-<p>هیچ مدلی نتوانست در مکالمه واقعی تشخیص دهد «چه زمانی» به سراغ حافظه گذشته برود. در بنچمارک‌های قبلی، خود سوالات مصنوعی سرنخ را لو می‌دادند.</p>
+<p>No LLM was able to reliably deduce 'when' to trigger historical memory lookups in organic conversations. In prior benchmarks, the synthetic questions themselves inadvertently signaled memory needs.</p>
 <ol>
-<li>**۳۱ برابر اختلاف هزینه با بازدهی یکسان:**</li>
+<li><strong>Identical F1 Score at 31x Token Cost:</strong></li>
 </ol>
-<p>سه سیستم معماری مختلف برای بازسازی پرسونا تست شدند و هر سه به امتیاز F1 دقیقاً یکسانی رسیدند؛ اما با ۳۱ برابر اختلاف هزینه در مصرف توکن!</p>
-<div class="callout-quote-box"><strong>سوال برای معماران سیستم:<strong></div>
-<div class="callout-quote-box">وقتی معیارهای تجمیعی این‌قدر گمراه‌کننده‌اند، شما در عمل چطور بازدهی سیستم‌های حافظه یا RAG را اندازه می‌گیرید؟</div>
-<p>---</p>
-<p>📎 <strong>منبع مقاله در arXiv:<strong> [https://arxiv.org/abs/2610.01780](https://arxiv.org/abs/2610.01780)</p>
+<p>Three disparate architectural paradigms were evaluated for persona reconstruction. All three attained identical F1 performance metrics—despite a staggering 31-fold difference in token consumption expense!</p>
+<div class="callout-quote-box"><strong>Question for System Architects:</strong></div>
+<div class="callout-quote-box">With aggregate metrics proving so deceptive, how do you evaluate production memory systems or RAG pipelines in real deployments?</div>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>Paper on arXiv:</strong> <a href="https://arxiv.org/abs/2610.01780" target="_blank" style="color: var(--primary); text-decoration: underline;">https://arxiv.org/abs/2610.01780</a></p>
         `
       }
     ];
@@ -3063,7 +3065,8 @@
           `;
         }
 
-        const tagsHtml = (item.tags || []).slice(0, 3).map(tag => `<span class="card-tag-pill">${tag}</span>`).join('');
+        const activeTags = (currentLang === 'fa' ? (item.tagsFa || item.tags) : (item.tagsEn || item.tags)) || [];
+        const tagsHtml = activeTags.slice(0, 3).map(tag => `<span class="card-tag-pill">${tag}</span>`).join('');
 
         return `
           <div class="pytopia-card ${item.categoryClass}" onclick="handleCardClick('${item.id}', '${item.type}')">

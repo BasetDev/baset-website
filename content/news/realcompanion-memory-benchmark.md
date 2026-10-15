@@ -1,6 +1,8 @@
 ---
 title: "چرا بنچمارک‌های حافظه در هوش مصنوعی ما را سر کار گذاشته‌اند؟ (تحلیل RealCompanion)"
 titleEn: "Why AI Memory Benchmarks Mislead Us: Analysis of the RealCompanion Study"
+summaryFa: "تحلیل ۲۷ هزار پیام واقعی نشان می‌دهد پنجره پیام‌های اخیر جواب ۹۵.۹٪ پیام‌ها را دارد، اما برای حافظه بلندمدت کارایی تا ۲.۲٪ سقوط می‌کند!"
+summaryEn: "Analysis of 27k real-world chat messages reveals recency windows cover 95.9% of queries, but true long-term retrieval plunges to 2.2%."
 dateShamsi: "۱۴ مهر ۱۴۰۵"
 dateGregorian: "05 Oct 2026"
 category: "news"
@@ -11,6 +13,13 @@ tags:
   - معماری_نرم_افزار
   - RAG
   - RealCompanion
+tagsEn:
+  - "AI Memory"
+  - "Machine Learning"
+  - "Benchmark"
+  - "Software Architecture"
+  - "RAG"
+  - "RealCompanion"
 published: true
 source: "https://arxiv.org/abs/2610.01780"
 ---
@@ -35,3 +44,26 @@ source: "https://arxiv.org/abs/2610.01780"
 
 ---
 📎 **منبع مقاله در arXiv:** [https://arxiv.org/abs/2610.01780](https://arxiv.org/abs/2610.01780)
+
+<!-- english -->
+
+Many AI memory benchmarks are fundamentally misleading because they are tested against synthetic data and contrived queries rather than natural, longitudinal human conversations.
+
+Recently, researchers behind the **RealCompanion** paper took a radically different approach: analyzing **27,218 real-world messages** exchanged between 10 users and AI companions over 120 days, backed by step-by-step reasoning annotations.
+
+## Three Key Technical Takeaways
+
+1. **The Recency Window Fallacy:**  
+   Recent message windows resolve 95.9% of user inquiries. However, for queries genuinely requiring long-term memory, recency window accuracy plunges down to 2.2%. In essence, 96% of perceived memory retrieval success originates from interactions that never demanded historical context in the first place!
+
+2. **Inability to Decide 'When' to Retrieve:**  
+   No LLM was able to reliably deduce 'when' to trigger historical memory lookups in organic conversations. In prior benchmarks, the synthetic questions themselves inadvertently signaled memory needs.
+
+3. **Identical F1 Score at 31x Token Cost:**  
+   Three disparate architectural paradigms were evaluated for persona reconstruction. All three attained identical F1 performance metrics—despite a staggering 31-fold difference in token consumption expense!
+
+> **Question for System Architects:**  
+> With aggregate metrics proving so deceptive, how do you evaluate production memory systems or RAG pipelines in real deployments?
+
+---
+📎 **Paper on arXiv:** [https://arxiv.org/abs/2610.01780](https://arxiv.org/abs/2610.01780)

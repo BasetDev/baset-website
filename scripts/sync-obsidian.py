@@ -10,7 +10,6 @@ import os
 import re
 import json
 import shutil
-import subprocess
 from pathlib import Path
 
 # Paths
@@ -75,7 +74,16 @@ def parse_frontmatter(content):
                 meta[current_key].append(item)
     return meta, body
 
+def format_inline_markdown(text):
+    # Convert bold **text** to <strong>text</strong>
+    text = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', text)
+    # Convert links [text](url) to <a href="url" target="_blank">text</a>
+    text = re.sub(r'\[(.*?)\]\((.*?)\)', r'<a href="\2" target="_blank" style="color: var(--primary); text-decoration: underline;">\1</a>', text)
+    return text
+
 def markdown_to_html(md_text):
+    if not md_text:
+        return ""
     lines = md_text.split("\n")
     html_parts = []
     in_code_block = False
@@ -115,13 +123,13 @@ def markdown_to_html(md_text):
             continue
 
         if stripped.startswith("### "):
-            html_parts.append(f"<h3>{stripped[4:]}</h3>")
+            html_parts.append(f"<h3>{format_inline_markdown(stripped[4:])}</h3>")
         elif stripped.startswith("## "):
-            html_parts.append(f"<h2>{stripped[3:]}</h2>")
+            html_parts.append(f"<h2>{format_inline_markdown(stripped[3:])}</h2>")
         elif stripped.startswith("# "):
-            html_parts.append(f"<h1>{stripped[2:]}</h1>")
+            html_parts.append(f"<h1>{format_inline_markdown(stripped[2:])}</h1>")
         elif stripped.startswith("> "):
-            quote_text = stripped[2:].replace("**", "<strong>").replace("__", "<strong>")
+            quote_text = format_inline_markdown(stripped[2:])
             html_parts.append(f'<div class="callout-quote-box">{quote_text}</div>')
         elif re.match(r"^\d+\.\s", stripped):
             if not in_list or list_type != "ol":
@@ -130,7 +138,7 @@ def markdown_to_html(md_text):
                 html_parts.append("<ol>")
                 in_list = True
                 list_type = "ol"
-            item_text = re.sub(r"^\d+\.\s*", "", stripped)
+            item_text = format_inline_markdown(re.sub(r"^\d+\.\s*", "", stripped))
             html_parts.append(f"<li>{item_text}</li>")
         elif stripped.startswith("- ") or stripped.startswith("* "):
             if not in_list or list_type != "ul":
@@ -139,13 +147,15 @@ def markdown_to_html(md_text):
                 html_parts.append("<ul>")
                 in_list = True
                 list_type = "ul"
-            item_text = stripped[2:]
+            item_text = format_inline_markdown(stripped[2:])
             html_parts.append(f"<li>{item_text}</li>")
+        elif stripped == "---":
+            html_parts.append("<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>")
         else:
             if in_list:
                 html_parts.append(f"</{list_type}>")
                 in_list = False
-            p_text = stripped.replace("**", "<strong>")
+            p_text = format_inline_markdown(stripped)
             html_parts.append(f"<p>{p_text}</p>")
 
     if in_list:
@@ -167,7 +177,6 @@ def sync():
         if "templates" in md_file.parts or "drafts" in md_file.parts or md_file.name.lower() == "readme.md":
             continue
 
-        # Relative path inside vault/website (e.g., news/realcompanion.md)
         rel_path = md_file.relative_to(VAULT_DIR)
         dest_file = CONTENT_DIR / rel_path
         dest_file.parent.mkdir(parents=True, exist_ok=True)
@@ -191,16 +200,39 @@ def sync():
         title_en = meta.get("titleEn", slug)
         date_shamsi = meta.get("dateShamsi", "امروز")
         date_gregorian = meta.get("dateGregorian", "Today")
-        tags = meta.get("tags", ["Tech"])
-        if isinstance(tags, str):
-            tags = [t.strip() for t in tags.split(",")]
+        
+        tags_fa = meta.get("tags", ["Tech"])
+        if isinstance(tags_fa, str):
+            tags_fa = [t.strip() for t in tags_fa.split(",")]
+        tags_en = meta.get("tagsEn", tags_fa)
+        if isinstance(tags_en, str):
+            tags_en = [t.strip() for t in tags_en.split(",")]
 
-        paragraphs = [p for p in body.split("\n\n") if p.strip() and not p.strip().startswith("#")]
-        summary_fa = paragraphs[0].strip() if paragraphs else title_fa
+        # Split Persian and English markdown content
+        if "<!-- english -->" in body:
+            parts = body.split("<!-- english -->", 1)
+            body_fa = parts[0].strip()
+            body_en = parts[1].strip()
+        elif "<!-- en -->" in body:
+            parts = body.split("<!-- en -->", 1)
+            body_fa = parts[0].strip()
+            body_en = parts[1].strip()
+        else:
+            body_fa = body
+            body_en = meta.get("contentEn", "")
+
+        paragraphs_fa = [p for p in body_fa.split("\n\n") if p.strip() and not p.strip().startswith("#")]
+        summary_fa = meta.get("summaryFa") or (paragraphs_fa[0].strip() if paragraphs_fa else title_fa)
         if len(summary_fa) > 160:
             summary_fa = summary_fa[:157] + "..."
 
-        html_body = markdown_to_html(body)
+        paragraphs_en = [p for p in body_en.split("\n\n") if p.strip() and not p.strip().startswith("#")] if body_en else []
+        summary_en = meta.get("summaryEn") or (paragraphs_en[0].strip() if paragraphs_en else title_en)
+        if len(summary_en) > 160:
+            summary_en = summary_en[:157] + "..."
+
+        html_body_fa = markdown_to_html(body_fa)
+        html_body_en = markdown_to_html(body_en) if body_en else html_body_fa
 
         published_items.append({
             "id": slug,
@@ -209,14 +241,16 @@ def sync():
             "categoryClass": CATEGORY_THEMES.get(category, "card-theme-amber"),
             "dateShamsi": date_shamsi,
             "dateGregorian": date_gregorian,
-            "tags": tags,
+            "tags": tags_fa,
+            "tagsFa": tags_fa,
+            "tagsEn": tags_en,
             "iconSvg": CATEGORY_ICONS.get(category, CATEGORY_ICONS["news"]),
             "titleFa": title_fa,
             "titleEn": title_en,
             "summaryFa": summary_fa,
-            "summaryEn": summary_fa,
-            "contentFa": html_body,
-            "contentEn": html_body
+            "summaryEn": summary_en,
+            "contentFa": html_body_fa,
+            "contentEn": html_body_en
         })
 
     print(f"[✓] Synced Markdown files into {CONTENT_DIR}")
@@ -228,7 +262,8 @@ def sync():
     # 2. Build JavaScript block
     js_items = []
     for item in published_items:
-        tags_json = json.dumps(item["tags"], ensure_ascii=False)
+        tags_fa_json = json.dumps(item["tagsFa"], ensure_ascii=False)
+        tags_en_json = json.dumps(item["tagsEn"], ensure_ascii=False)
         js_items.append(f"""      {{
         id: "{item['id']}",
         type: "{item['type']}",
@@ -236,7 +271,9 @@ def sync():
         categoryClass: "{item['categoryClass']}",
         dateShamsi: "{item['dateShamsi']}",
         dateGregorian: "{item['dateGregorian']}",
-        tags: {tags_json},
+        tags: {tags_fa_json},
+        tagsFa: {tags_fa_json},
+        tagsEn: {tags_en_json},
         iconSvg: '{item['iconSvg']}',
         titleFa: "{item['titleFa']}",
         titleEn: "{item['titleEn']}",
