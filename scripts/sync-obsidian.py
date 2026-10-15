@@ -93,6 +93,31 @@ def markdown_to_html(md_text):
     list_type = None
 
     for line in lines:
+        stripped = line.strip()
+
+        # Handle Markdown images ![alt](url)
+        img_match = re.match(r"^!\[(.*?)\]\((.*?)\)$", stripped)
+        if img_match and not in_code_block:
+            if in_list:
+                html_parts.append(f"</{list_type}>")
+                in_list = False
+            alt_text = img_match.group(1)
+            img_url = img_match.group(2)
+            caption_html = f'<figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">{alt_text}</figcaption>' if alt_text else ''
+            html_parts.append(f'''
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="{img_url}" alt="{alt_text}" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            {caption_html}
+          </figure>''')
+            continue
+
+        # Handle raw HTML tags
+        if (stripped.startswith("<figure") or stripped.startswith("<img") or stripped.startswith("<div") or stripped.startswith("<table")) and not in_code_block:
+            if in_list:
+                html_parts.append(f"</{list_type}>")
+                in_list = False
+            html_parts.append(stripped)
+            continue
         if line.startswith("```"):
             if in_code_block:
                 in_code_block = False

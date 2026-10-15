@@ -2802,7 +2802,191 @@
     };
 
     // پایگاه داده دایرکتوری با ۳ دسته‌بندی اصلی: اخبار (news)، مقالات (articles)، آموزش (tutorials)
-                                const directoryItems = [
+                                    const directoryItems = [
+      {
+        id: "simulating-student-learning-ai-tutoring",
+        type: "article",
+        category: "articles",
+        categoryClass: "card-theme-violet",
+        dateShamsi: "۲۱ مهر ۱۴۰۵",
+        dateGregorian: "12 Oct 2026",
+        tags: ["هوش_مصنوعی", "آموزش_مجازی", "شبیه_سازی", "یادگیری_تقویتی", "مایکروسافت", "LLM"],
+        tagsFa: ["هوش_مصنوعی", "آموزش_مجازی", "شبیه_سازی", "یادگیری_تقویتی", "مایکروسافت", "LLM"],
+        tagsEn: ["AI Tutoring", "StudentSim", "Reinforcement Learning", "Microsoft Research", "Student Simulation", "LLM"],
+        iconSvg: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>',
+        titleFa: "شبیه‌سازی یادگیری دانش‌آموزان برای ارتقای سیستم‌های تدریس هوش مصنوعی (پژوهش مایکروسافت)",
+        titleEn: "Simulating Student Learning for Better AI Tutoring (Microsoft Research)",
+        summaryFa: "سیستم نوآورانه StudentSim مایکروسافت با شبیه‌سازی رفتار و مرزهای شناختی دانش‌آموزان، چرخه بازخورد ارزیابی و آموزش معلمان هوش مصنوعی را متحول می‌کند.",
+        summaryEn: "Microsoft Research's StudentSim framework generates personalized student simulators to evaluate and optimize AI tutoring policies prior to real-world deploym...",
+        contentFa: `
+<p>خیلی از ابزارهای هوش مصنوعی که برای تدریس و آموزش طراحی می‌شوند، به سختی ارتقا پیدا می‌کنند؛ زیرا برای سنجش کیفیت آموزش، ارزیابی پاسخ خودِ معلم کافی نیست. یک سیستم تدریس هوشمند باید بداند <strong>بعد از ارائه راهنمایی چه اتفاقی برای یادگیرنده می‌افتد</strong>: آیا دانش‌آموز متوجه اشتباهش شد؟ آیا راهنمایی داده‌شده به او کمک کرد خودش مسئله را حل کند یا جواب را بیش از حد لو داد؟ آیا یک دانش‌آموز دیگر به سبک دیگری از حمایت نیاز دارد؟</p>
+<p>در پژوهش‌های فعلی، پاسخ به این سوالات نیازمند تست روی دانش‌آموزان واقعی است؛ فرآیندی که بسیار ارزشمند اما <strong>کند، پرهزینه، تنک و سخت برای مقیاس‌پذیری</strong> است.</p>
+<p>به تازگی پژوهشگران مایکروسافت ریسرچ (Microsoft Research) به همراه دانشگاه ایلینوی سیستم نوآورانه‌ای به نام <strong>StudentSim</strong> معرفی کرده‌اند: سامانه‌ای که مدل‌های شبیه‌ساز شخصی‌سازی‌شده برای هر دانش‌آموز ایجاد می‌کند تا نحوه یادگیری و تغییر رفتار آن‌ها پس از دریافت راهنمایی را شبیه‌سازی کند.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/hero.webp" alt="تصویر شاخص پژوهش StudentSim مایکروسافت" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">تصویر شاخص پژوهش StudentSim مایکروسافت</figcaption>
+          </figure>
+<h2>۱. چالش بنیادین: کمبود چرخه بازخورد در تدریس هوش مصنوعی</h2>
+<p>در تدریس انسانی، معلم بر اساس واکنش و چهره دانش‌آموز متوجه می‌شود که آیا درس را متوجه شده است یا خیر. اما در آموزش هوش مصنوعی، دریافت بازخورد از دانش‌آموز واقعی با چهار چالش بزرگ همراه است:</p>
+<ul>
+<li><strong>کند بودن (Slow):</strong> سازماندهی کلاس‌ها و دریافت پاسخ روزها یا ماه‌ها طول می‌کشد.</li>
+<li><strong>پرهزینه بودن (Costly):</strong> استخدام افراد و اجرای آزمایش‌های انسانی بودجه سنگینی می‌طلبد.</li>
+<li><strong>تنک بودن داده‌ها (Sparse):</strong> هر دانش‌آموز تعداد محدودی تمرین حل می‌کند.</li>
+<li><strong>مقیاس‌پذیری دشوار (Hard to Scale):</strong> نمی‌توان مدل را روزانه هزاران بار با انسان‌ها تست کرد.</li>
+</ul>
+<p>اینجاست که شبیه‌ساز دانش‌آموز (AI Student Simulator) وارد می‌شود و به عنوان یک <strong>پروکسی سریع بازخورد (Fast Proxy Feedback)</strong> عمل می‌کند تا پژوهشگران پیش از بردن سیستم به کلاس‌های واقعی، معلم‌های هوش مصنوعی را ارزیابی و بهینه‌سازی کنند.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-1-motivation.webp" alt="شکل ۱: چرخه بازخورد سنتی در برابر فیدبک سریع شبیه‌ساز دانش‌آموز (StudentSim)" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">شکل ۱: چرخه بازخورد سنتی در برابر فیدبک سریع شبیه‌ساز دانش‌آموز (StudentSim)</figcaption>
+          </figure>
+<div class="callout-quote-box"><strong>یک نکته بسیار مهم:</strong> هدف این پژوهش به هیچ عنوان جایگزینی معلمان یا کلاس‌های واقعی نیست؛ بلکه ایجاد یک ابزار توسعه آزمایشگاهی برای ارتقای معلمان هوش مصنوعی پیش از استقرار در دنیای واقعی است.</div>
+<h2>۲. معیارهای سنجش شبیه‌ساز: فراتر از پرامپت‌های ساده</h2>
+<p>یک رویکرد ساده‌لوحانه این است که به یک مدل بزرگ مثل GPT بگوییم: *«نقش یک دانش‌آموز ابتدایی ضعیف در ریاضی را بازی کن»*. این روش شکست می‌خورد؛ زیرا مدل لحن کودکانه به خود می‌گیرد، اما همچنان به دانش ریاضی و استدلال فراتر از سطح آن کودک دسترسی دارد و ناخواسته تقلب می‌کند!</p>
+<p>پژوهشگران با الهام از <strong>«منطقه تقریبی رشد» (Zone of Proximal Development - ویگوتسکی)</strong>، بنچمارک جدید <strong>StudentSimEval</strong> را بر پایه دو معیار مکمل تعریف کرده‌اند:</p>
+<ol>
+<li><strong>فیدلیتی رفتاری (Behavioral Fidelity - F):</strong> آیا شبیه‌ساز می‌تواند الگوهای رفتاری و پاسخ‌های مستقلِ یک دانش‌آموز مشخص را بازتولید کند؟</li>
+<li><strong>پاسخ‌دهی به راهنمایی (Guidance Responsiveness - R):</strong> آیا شبیه‌ساز پس از دریافت راهنمایی معلم، پاسخ خود را تغییر می‌دهد و اصلاح می‌کند؟</li>
+</ol>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-2-evaluation-metrics.webp" alt="شکل ۲: پروتکل ارزیابی StudentSimEval بر پایه فیدلیتی رفتاری و پاسخ‌دهی به راهنمایی در یک مسئله ریاضی" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">شکل ۲: پروتکل ارزیابی StudentSimEval بر پایه فیدلیتی رفتاری و پاسخ‌دهی به راهنمایی در یک مسئله ریاضی</figcaption>
+          </figure>
+<p>این دو معیار مکمل یکدیگرند: مدلی که فقط فیدلیتی دارد، شبیه یک ضبط‌صوت قدیمی است و چیزی یاد نمی‌گیرد؛ و مدلی که کورکورانه به هر راهنمایی بله می‌گوید، نقاط ضعف و اشتباهات واقعی دانش‌آموز را لو نمی‌دهد.</p>
+<h2>۳. معماری آموزش دو مرحله‌ای از داده‌های تنک</h2>
+<p>داده‌های واقعی دانش‌آموزان به شدت محدود و تنک هستند (شاید چند انشا یا پاسخ کوتاه برای هر فرد). آموزش مدل برای هر فرد از صفر باعث بیش‌برازش (Overfitting) می‌شود. سیستم StudentSim از یک معماری آموزش دو مرحله‌ای هوشمند استفاده می‌کند:</p>
+<ul>
+<li><strong>مرحله ۱ (آموزش عمومی - General Training):</strong> تجمیع داده‌های صدها دانش‌آموز برای یادگیری الگوهای رفتاری مشترک (فضای پاسخ‌ها، اشتباهات متداول و نحوه تجدیدنظر پس از راهنمایی).</li>
+<li><strong>مرحله ۲ (آموزش اختصاصی - Student-Specific Training):</strong> فاین‌تیون و انطباق مدل بر روی داده‌های تنکِ همان دانش‌آموز خاص برای ساخت یک شبیه‌ساز شخصی‌سازی‌شده (مانند Simulator A, B, C).</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-3-training-pipeline.webp" alt="شکل ۳: خط‌لوله آموزش دو مرحله‌ای؛ یادگیری الگوهای مشترک و سپس انطباق شخصی‌سازی‌شده" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">شکل ۳: خط‌لوله آموزش دو مرحله‌ای؛ یادگیری الگوهای مشترک و سپس انطباق شخصی‌سازی‌شده</figcaption>
+          </figure>
+<h2>۴. برتری قاطع نسبت به مدل‌های پیشرو در بنچمارک</h2>
+<p>این چارچوب روی سه دامنه کاملاً متفاوت تست شد: <strong>شطرنج</strong> (پیش‌بینی حرکت و اصلاح پس از تحلیل مربی)، <strong>نگارش انگلیسی زبان دوم</strong> (الگوهای غلط نگارشی و اصلاح پس از فیدبک معلم)، و <strong>ریاضیات</strong> (پیش‌بینی گزینه‌ها و اصلاح پس از توضیح).</p>
+<p>در شطرنج، سیستم StudentSim به فیدلیتی رفتاری <strong>0.5150</strong> و پاسخ‌دهی به راهنمایی <strong>0.9067</strong> رسید. در مقابل:</p>
+<ul>
+<li>مدل‌های پرامپت‌شده مثل <strong>GPT-4 / GPT-5.4</strong> فیدلیتی ضعیف <strong>0.2316</strong> و پاسخ‌دهی <strong>0.7186</strong> داشتند (به راهنمایی پاسخ می‌دهند اما رفتار واقعی انسان را بازتولید نمی‌کنند).</li>
+<li>مدل تخصصی حرکت انسان مثل <strong>Maia2</strong> به فیدلیتی <strong>0.4535</strong> اما پاسخ‌دهی ضعیف <strong>0.2721</strong> رسید (حرکت انسان را حدس می‌زند اما مسیر مکالمه زبانی برای دریافت راهنمایی ندارد).</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-4-performance-chess.webp" alt="شکل ۴: نمودار مقایسه فیدلیتی رفتاری در برابر پاسخ‌دهی به راهنمایی در بازی شطرنج" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">شکل ۴: نمودار مقایسه فیدلیتی رفتاری در برابر پاسخ‌دهی به راهنمایی در بازی شطرنج</figcaption>
+          </figure>
+<h2>۵. بهینه‌سازی معلم هوش مصنوعی با یادگیری تقویتی (RL)</h2>
+<p>شگفت‌انگیزترین بخش این پژوهش، استفاده از شبیه‌ساز دانش‌آموز به عنوان محیط پاداش در <strong>یادگیری تقویتی (Reinforcement Learning)</strong> است.</p>
+<p>در این سناریو:</p>
+<ol>
+<li>معلم هوش مصنوعی مسئله $Q$ و پاسخ غلط قبلی دانش‌آموز $A_{prev}$ را دریافت می‌کند.</li>
+<li>معلم راهنمایی پداگوژیک $G$ را تولید می‌کند.</li>
+<li>شبیه‌ساز منجمد (Frozen AI Student Simulator) راهنمایی را می‌خواند و پاسخ اصلاح‌شده $A_{rev}$ را تولید می‌کند.</li>
+<li>پاداش (Reward) بر اساس میزان <strong>«پیشرفت یادگیری»</strong> محاسبه می‌شود:</li>
+</ol>
+<p>$$	ext{Reward} = 	ext{score}(A_{rev}) - 	ext{score}(A_{prev})$$</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-5-rl-framework.webp" alt="شکل ۵: معماری یادگیری تقویتی (RL) برای آموزش سیاست معلم هوش مصنوعی با استفاده از فیدبک شبیه‌ساز منجمد" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">شکل ۵: معماری یادگیری تقویتی (RL) برای آموزش سیاست معلم هوش مصنوعی با استفاده از فیدبک شبیه‌ساز منجمد</figcaption>
+          </figure>
+<div class="callout-quote-box"><strong>نتیجه ارزیابی کور اساتید انسانی:</strong></div>
+<div class="callout-quote-box">معلم آموزش‌دیده با بازخورد شبیه‌ساز StudentSim به <strong>دقت ۹۰.۵ درصد</strong> دست یافت؛ در حالی که مدل بدون یادگیری تقویتی تنها <strong>۷۵.۷ درصد</strong> و مدل آموزش‌دیده با پاداش GPT-5.4 تنها <strong>۷۱.۶ درصد</strong> دقت داشتند!</div>
+<h2>۶. چشم‌انداز آینده</h2>
+<p>پژوهش StudentSim نشان می‌دهد که می‌توان مسیر آموزش سیستم‌های هوشمند را متحول کرد: حرکت از معلم‌هایی که فقط بر اساس پاسخ‌های استاتیک آموزش می‌بینند، به سمت سیستم‌هایی که از <strong>واکنش‌های رفتاری واقعی دانش‌آموزان</strong> یاد می‌گیرند. کدهای آموزشی و بنچمارک StudentSimEval به صورت متن‌باز منتشر شده‌اند.</p>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>منبع رسمی مقاله در وبلاگ مایکروسافت ریسرچ:</strong></p>
+<p><a href="https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/</a></p>
+        `,
+        contentEn: `
+<p>AI tutoring systems cannot be evaluated solely by inspecting the tutor's answers. An effective teacher needs to understand what happens <strong>after guidance reaches the student</strong>: Did the student grasp the underlying concept and correct the mistake? Did the pedagogical hint nudge them to think for themselves, or did it give away the solution too easily? Would a different student require an entirely distinct instructional strategy?</p>
+<p>In current research pipelines, answering these critical questions necessitates empirical studies with human learners. While invaluable, real-world human trials are <strong>slow, expensive, sparse, and inherently difficult to scale</strong> during rapid model development.</p>
+<p>To bridge this bottleneck, researchers from Microsoft Research and the University of Illinois Urbana-Champaign (UIUC) introduced <strong>StudentSim</strong>: an AI research framework that generates personalized simulators of individual students, accurately modeling how they answer questions independently and how their understanding evolves following tutor intervention.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/hero.webp" alt="Microsoft Research StudentSim Hero Feature" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Microsoft Research StudentSim Hero Feature</figcaption>
+          </figure>
+<h2>1. The Core Challenge: Feedback Bottlenecks in AI Tutoring</h2>
+<p>Human tutoring thrives on instantaneous pedagogical feedback. Tutors observe real-time reactions and adapt their explanations on the fly. In contrast, training AI tutors against real students faces four severe bottlenecks:</p>
+<ul>
+<li><strong>Slow:</strong> Running human subject studies takes weeks or months.</li>
+<li><strong>Costly:</strong> Compensating participants and deploying controlled classrooms incurs high budgets.</li>
+<li><strong>Sparse:</strong> Individual learners typically generate only a handful of recorded problem attempts.</li>
+<li><strong>Hard to Scale:</strong> Iterative gradient-based tuning cannot ping real students thousands of times daily.</li>
+</ul>
+<p>StudentSim addresses this by acting as a <strong>Fast Proxy Feedback</strong> loop, allowing researchers to stress-test, evaluate, and optimize AI tutors prior to conducting real-world educational trials.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-1-motivation.webp" alt="Figure 1: Traditional slow feedback loop vs fast proxy feedback with AI Student Simulator" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Figure 1: Traditional slow feedback loop vs fast proxy feedback with AI Student Simulator</figcaption>
+          </figure>
+<div class="callout-quote-box"><strong>Key Distinction:</strong> StudentSim is strictly an experimental research methodology; it is not a commercial product, is not deployed in live classrooms, and is not designed to replace human teachers.</div>
+<h2>2. Measuring What a Simulator Needs to Do</h2>
+<p>A common naive approach is instructing a frontier LLM to role-play a struggling student (e.g., *"You are a 4th grader who struggles with fractions"*). This strategy fails: while the LLM mimics child-like vernacular and uncertainty, it cannot hide its latent high-dimensional reasoning and world knowledge. It will inadvertently solve problems far beyond the target student's cognitive boundary, producing misleadingly optimistic feedback.</p>
+<p>Conversely, classical Knowledge Tracing models predict student performance based on historical logs, but they cannot process natural language pedagogical guidance or Socratic hints.</p>
+<p>Drawing inspiration from Vygotsky's <strong>Zone of Proximal Development (ZPD)</strong>—the gap between independent performance and performance with guidance—the researchers established two grounded evaluation dimensions in the <strong>StudentSimEval</strong> benchmark:</p>
+<ol>
+<li><strong>Behavioral Fidelity (F):</strong> Measures whether the simulator reproduces the specific learner's historical answers and common misconceptions on held-out problems.</li>
+<li><strong>Guidance Responsiveness (R):</strong> Measures whether the simulator updates its reasoning trajectory after processing tutor explanations and hints.</li>
+</ol>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-2-evaluation-metrics.webp" alt="Figure 2: StudentSimEval evaluating behavioral fidelity and guidance responsiveness on a math problem" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Figure 2: StudentSimEval evaluating behavioral fidelity and guidance responsiveness on a math problem</figcaption>
+          </figure>
+<p>Both dimensions are indispensable: a simulator with high fidelity alone acts as an inert historical snapshot that fails to learn, whereas a simulator that blindly accepts all tutor suggestions lacks authentic human vulnerability and error patterns.</p>
+<h2>3. Two-Stage Training Framework for Sparse Learner Records</h2>
+<p>Real learner datasets are notoriously sparse at the individual level. Training a custom neural simulator from scratch per student inevitably leads to severe overfitting. StudentSim circumvents this through an elegant two-stage training pipeline:</p>
+<ul>
+<li><strong>Stage 1 (General Training):</strong> Pretrains on pooled interaction logs across multiple students within the same domain. The model acquires universal student behavioral traits: valid response syntax, common misconception patterns, and standard revision dynamics following instructional hints.</li>
+<li><strong>Stage 2 (Student-Specific Training):</strong> Adapts the model exclusively on an individual student's own sparse historical records, yielding a tailored simulator (e.g., Simulator A, B, C).</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-3-training-pipeline.webp" alt="Figure 3: Two-stage training pipeline: learning shared patterns from pooled data then adapting per student" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Figure 3: Two-stage training pipeline: learning shared patterns from pooled data then adapting per student</figcaption>
+          </figure>
+<h2>4. Benchmark Performance Across Chess, ESL Writing, and Math</h2>
+<p>StudentSimEval systematically benchmarked simulators across three diverse cognitive domains: <strong>Chess</strong> (move prediction and post-coaching correction), <strong>Second-Language English Writing</strong> (error modeling and essay revision after teacher feedback), and <strong>Mathematics</strong> (multiple-choice reasoning and update after explanation).</p>
+<p>Across all domains, StudentSim significantly outperformed leading baselines:</p>
+<ul>
+<li>In chess, StudentSim achieved a <strong>Behavioral Fidelity of 0.5150</strong> and <strong>Guidance Responsiveness of 0.9067</strong>.</li>
+<li>In comparison, <strong>Prompted LLMs (GPT-4 / GPT-5.4)</strong> achieved only <strong>0.2316 fidelity</strong> and <strong>0.7186 responsiveness</strong> (they follow guidance but fail to replicate human skill boundaries).</li>
+<li>The state-tracking human move predictor <strong>Maia2</strong> attained <strong>0.4535 fidelity</strong> but an inferior <strong>0.2721 responsiveness</strong> (it predicts human moves well but lacks a language channel for instructional feedback).</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-4-performance-chess.webp" alt="Figure 4: Scatter plot comparing Behavioral Fidelity vs Guidance Responsiveness in chess" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Figure 4: Scatter plot comparing Behavioral Fidelity vs Guidance Responsiveness in chess</figcaption>
+          </figure>
+<h2>5. Optimizing AI Tutors via Reinforcement Learning</h2>
+<p>The most compelling demonstration of StudentSim is using the trained simulator as an interactive environment reward model for <strong>Reinforcement Learning (RL)</strong>.</p>
+<p>In the chess tutoring experimental setup:</p>
+<ol>
+<li>The AI tutor policy observes the chess board state $Q$ and the student's prior suboptimal move $A_{prev}$.</li>
+<li>The tutor outputs pedagogical guidance $G$.</li>
+<li>The <strong>Frozen AI Student Simulator</strong> receives $G$ and predicts the student's revised move $A_{rev}$.</li>
+<li>The RL reward is directly proportional to the learner's measurable progress:</li>
+</ol>
+<p>$$	ext{Reward} = 	ext{score}(A_{rev}) - 	ext{score}(A_{prev})$$</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/studentsim/fig-5-rl-framework.webp" alt="Figure 5: Reinforcement learning framework to train an AI Tutor Policy using frozen student simulator feedback" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Figure 5: Reinforcement learning framework to train an AI Tutor Policy using frozen student simulator feedback</figcaption>
+          </figure>
+<div class="callout-quote-box"><strong>Human Expert Blind Evaluation:</strong></div>
+<div class="callout-quote-box">The AI tutor trained via StudentSim achieved <strong>90.5% pedagogical accuracy</strong>, significantly outperforming both the unreinforced baseline (<strong>75.7%</strong>) and the tutor trained against GPT-5.4 reward (<strong>71.6%</strong>). Human chess coaches also awarded it higher ratings for hint quality, adaptivity, and personalization.</div>
+<h2>6. Looking Ahead</h2>
+<p>StudentSim establishes a paradigm shift: building AI tutoring systems that learn from dynamic student behavioral responses rather than relying purely on static correctness labels. The researchers have made the paper, evaluation protocols, and code publicly available for the scientific community.</p>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>Official Publication on Microsoft Research:</strong></p>
+<p><a href="https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/</a></p>
+        `
+      },
       {
         id: "realcompanion-memory-benchmark",
         type: "article",
