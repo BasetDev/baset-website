@@ -75,6 +75,8 @@ def parse_frontmatter(content):
     return meta, body
 
 def format_inline_markdown(text):
+    # Convert inline code `code` to <code>code</code>
+    text = re.sub(r'`([^`]+)`', r'<code>\1</code>', text)
     # Convert bold **text** to <strong>text</strong>
     text = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', text)
     # Convert links [text](url) to <a href="url" target="_blank">text</a>
@@ -289,6 +291,13 @@ def sync():
     for item in published_items:
         tags_fa_json = json.dumps(item["tagsFa"], ensure_ascii=False)
         tags_en_json = json.dumps(item["tagsEn"], ensure_ascii=False)
+        title_fa_json = json.dumps(item["titleFa"], ensure_ascii=False)
+        title_en_json = json.dumps(item["titleEn"], ensure_ascii=False)
+        summary_fa_json = json.dumps(item["summaryFa"], ensure_ascii=False)
+        summary_en_json = json.dumps(item["summaryEn"], ensure_ascii=False)
+        content_fa_json = json.dumps(item["contentFa"], ensure_ascii=False)
+        content_en_json = json.dumps(item["contentEn"], ensure_ascii=False)
+
         js_items.append(f"""      {{
         id: "{item['id']}",
         type: "{item['type']}",
@@ -300,16 +309,12 @@ def sync():
         tagsFa: {tags_fa_json},
         tagsEn: {tags_en_json},
         iconSvg: '{item['iconSvg']}',
-        titleFa: "{item['titleFa']}",
-        titleEn: "{item['titleEn']}",
-        summaryFa: "{item['summaryFa']}",
-        summaryEn: "{item['summaryEn']}",
-        contentFa: `
-{item['contentFa']}
-        `,
-        contentEn: `
-{item['contentEn']}
-        `
+        titleFa: {title_fa_json},
+        titleEn: {title_en_json},
+        summaryFa: {summary_fa_json},
+        summaryEn: {summary_en_json},
+        contentFa: {content_fa_json},
+        contentEn: {content_en_json}
       }}""")
 
     items_block = "    const directoryItems = [\n" + ",\n".join(js_items) + "\n    ];"
@@ -321,7 +326,7 @@ def sync():
                 html = f.read()
 
             pattern = r'const directoryItems = \[.*?\];'
-            new_html, count = re.subn(pattern, items_block, html, flags=re.DOTALL)
+            new_html, count = re.subn(pattern, lambda m: items_block, html, flags=re.DOTALL)
             if count > 0:
                 with open(path, "w", encoding="utf-8") as f:
                     f.write(new_html)
