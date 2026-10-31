@@ -2802,7 +2802,7 @@
     };
 
     // پایگاه داده دایرکتوری با ۳ دسته‌بندی اصلی: اخبار (news)، مقالات (articles)، آموزش (tutorials)
-                                                const directoryItems = [
+                                                                const directoryItems = [
       {
         id: "simulating-student-learning-ai-tutoring",
         type: "article",
@@ -2985,6 +2985,102 @@
 <hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
 <p>📎 <strong>Official Publication on Microsoft Research:</strong></p>
 <p><a href="https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/</a></p>
+        `
+      },
+      {
+        id: "ux-vs-experience-design-nngroup",
+        type: "article",
+        category: "articles",
+        categoryClass: "card-theme-violet",
+        dateShamsi: "۰۹ آبان ۱۴۰۵",
+        dateGregorian: "30 Oct 2026",
+        tags: ["تجربه_کاربری", "طراحی_تجربه", "هوش_مصنوعی", "ایجنت", "نیلسن_نورمن_گروپ", "UX"],
+        tagsFa: ["تجربه_کاربری", "طراحی_تجربه", "هوش_مصنوعی", "ایجنت", "نیلسن_نورمن_گروپ", "UX"],
+        tagsEn: ["UX Design", "Experience Design", "AI Agents", "NNGroup", "Human-Centered Design", "Design Strategy"],
+        iconSvg: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>',
+        titleFa: "طراحی تجربه: حذف واژه «کاربر» از «تجربه کاربر» در عصر ایجنت‌های هوش مصنوعی (تحلیل NN/g)",
+        titleEn: "Experience Design: Dropping the “User” from “User Experience” (Nielsen Norman Group)",
+        summaryFa: "نیلسن نورمن گروپ با بررسی تغییر نقش انسان‌ها در عصر هوش مصنوعی نشان می‌دهد که چرا با ورود ایجنت‌های کنش‌گر، واژه UX جای خود را به Experience Design می‌دهد.",
+        summaryEn: "Nielsen Norman Group explores how AI agents acting on behalf of humans are transforming traditional UX into the broader discipline of Experience Design.",
+        contentFa: `
+<p>دان نورمن (Don Norman) در دهه ۱۹۹۰ میلادی واژه <strong>«تجربه کاربر» (User Experience - UX)</strong> را ابداع کرد؛ زیرا واژه‌های «کاربردپذیری» و «رابط کاربری» برای توصیف تمام تعاملات یک فرد با یک محصول بسیار محدود بودند. اما در تمام این سه دهه، یک پیش‌فرض بنیادین هرگز تغییر نکرد: <strong>اینکه انسان همواره کاربر مستقیم محصول است.</strong></p>
+<p>پیدایش هوش مصنوعی و سیستم‌های ایجنتیک این فرض را برای همیشه دگرگون کرده است. انسان‌ها دیگر لزوماً خودشان مستقیماً با سایت‌ها یا اپلیکیشن‌ها تعامل ندارند؛ بلکه <strong>ایجنت‌های هوش مصنوعی به نمایندگی از انسان‌ها دست به اقدام می‌زنند</strong>. به همین دلیل، موسسه معتبر نیلسن نورمن گروپ (NN/g) در مقاله‌ای تحلیلی به قلم رالوکا بودیو (Raluca Budiu) اعلام کرد که زمان آن رسیده تا واژه «کاربر» را کنار بگذاریم و رشته گسترده‌تر را <strong>«طراحی تجربه» (Experience Design)</strong> بنامیم.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/experiencedesign/hero.webp" alt="نقش طراحی تجربه (Experience Design) در عصر کارخانه‌های نرم‌افزاری و ایجنت‌های هوش مصنوعی" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">نقش طراحی تجربه (Experience Design) در عصر کارخانه‌های نرم‌افزاری و ایجنت‌های هوش مصنوعی</figcaption>
+          </figure>
+<h2>۱. تفاوت UX سنتی با Experience Design چیست؟</h2>
+<p>وقتی یک فرد از هوش مصنوعی می‌خواهد برایش خرید روزمره انجام دهد، بلیت پرواز رزرو کند، اشتراک یک سرویس را لغو کند یا اسناد اداری ثبت نماید، <strong>ایجنت هوش مصنوعی به کاربر مستقیم سیستم دیجیتال تبدیل می‌شود</strong>.</p>
+<p>بنابراین سفر تعاملی (Customer Journey) اکنون نه تنها شامل چندین کانال (موبایل، دسکتاپ، تلفن)، بلکه شامل <strong>چندین کنش‌گر (انسان و ایجنت)</strong> است:</p>
+<div class="callout-quote-box"><strong>تعریف طراحی تجربه (Experience Design):</strong></div>
+<div class="callout-quote-box">رشته‌ای که به طراحی و ارزیابی نحوه دستیابی انسان‌ها به اهدافشان از طریق سیستم‌های دیجیتال می‌پردازد؛ چه خودشان مستقیماً تعامل کنند و چه از طریق ایجنت‌هایی که به نمایندگی از آن‌ها اقدام می‌کنند.</div>
+<h2>۲. سه قلمرو جدید در طراحی تجربه</h2>
+<p>طراحی تجربه UX سنتی را نابود نمی‌کند، بلکه افق‌های آن را در سه لایه گسترش می‌دهد:</p>
+<h3>لایه اول: انسان‌ها در تعامل با محصولات دیجیتال (UX سنتی + Generative UI)</h3>
+<p>انسان‌ها همچنان نیاز دارند کارهای عادی را خودشان انجام دهند (پر کردن فرم مالیاتی یا خرید آنلاین). اما با ورود هوش مصنوعی مولد، سوالات پژوهشی تازه‌ای مطرح می‌شود:</p>
+<ul>
+<li>یک ایجنت چه زمانی باید بدون سوال از انسان دست به کار شود؟</li>
+<li>چه زمانی باید از انسان تقاضای شفاف‌سازی کند؟</li>
+<li>چه چیزهایی را باید به خاطر بسپارد و کنترل چه زمانی باید به انسان برگردد؟</li>
+</ul>
+<h3>لایه دوم: ایجنت‌ها در تعامل با سیستم‌های دیجیتال (Agent Experience - AX)</h3>
+<p>آنچه یک تجربه را برای انسان عالی می‌کند (سلسله‌مراتب بصری، چیدمان فضایی، رنگ‌ها)، لزوماً برای هوش مصنوعی اولویت ندارد. ایجنت‌ها با داده‌های ساختاریافته، APIها و کدهای تمیز تعامل برقرار می‌کنند. طراحی سیستم‌ها برای فهم و پیمایش راحت‌تر ایجنت‌ها حوزه نوظهوری به نام <strong>تجربه ایجنت (AX)</strong> است.</p>
+<h3>لایه سوم: تعامل همزمان انسان و ایجنت در یک مسیر مشترک (Human-Agent System)</h3>
+<p>وقتی یک کار بین انسان و هوش مصنوعی دست‌به‌دست می‌شود (Handoff)، مشکلات تجربه‌ای جدیدی پدیدار می‌شوند که هرگز با بررسی جداگانه انسان یا ایجنت قابل شناسایی نبودند.</p>
+<p>برای نمونه، فرض کنید ایجنت یک پرواز مناسب پیدا می‌کند، اما برای ثبت نهایی از کاربر می‌خواهد در سایت ایرلاین لاگین کند. کاربر در مرورگر داخلی ایجنت به پسورد منیجر خود دسترسی ندارد و فرآیند می‌شکند! این مشکل ناشی از <strong>نقص در انتقال وظیفه (Handoff Problem)</strong> میان هوش مصنوعی و انسان است.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/experiencedesign/experience-design-challenges.webp" alt="شکل ۱: سه لایه بنیادین چالش‌های طراحی تجربه در مواجهه با سیستم‌های هوش مصنوعی و ایجنت‌ها" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">شکل ۱: سه لایه بنیادین چالش‌های طراحی تجربه در مواجهه با سیستم‌های هوش مصنوعی و ایجنت‌ها</figcaption>
+          </figure>
+<h2>۳. هوش مصنوعی چگونه متدولوژی‌های طراحی را دگرگون می‌کند؟</h2>
+<p>روش‌های ارزیابی تجربه نیز در حال تکامل هستند:</p>
+<ul>
+<li><strong>تکرارپذیری در سیستم‌های غیرقطعی (Non-deterministic):</strong> چون پاسخ مدل‌ها با ورودی یکسان همیشه ثابت نیست، ارزیابی باید از طریق تست‌های تکرارشونده و تحلیل لاگ‌ها صورت گیرد.</li>
+<li><strong>طراحی برای اهداف انسانی (Human-Centered Root):</strong> حذف واژه کاربر به معنای فراموشی انسان نیست؛ بلکه هدف و آسایش انسان پشت صحنه همواره معیار نهایی موفقیت سیستم باقی می‌ماند.</li>
+</ul>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>منبع رسمی مقاله در وب‌سایت نیلسن نورمن گروپ (Nielsen Norman Group):</strong></p>
+<p><a href="https://www.nngroup.com/articles/ux-vs-experience-design/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://www.nngroup.com/articles/ux-vs-experience-design/</a></p>
+        `,
+        contentEn: `
+<p>In the 1990s, Don Norman popularized the term <strong>"User Experience" (UX)</strong> because "usability" and "user interface" were too narrow to encompass everything a person felt across brand touchpoints. Yet, across three decades of design evolution, one foundational assumption remained unchallenged: <strong>that the human was always the user interacting directly with digital channels.</strong></p>
+<p>The emergence of autonomous AI agents shatters this premise. People no longer interact with digital touchpoints exclusively—their personal AI agents act on their behalf. In a seminal research paper, Dr. Raluca Budiu from the Nielsen Norman Group (NN/g) outlines why the industry is dropping the word "User" in favor of <strong>"Experience Design"</strong>.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/experiencedesign/hero.webp" alt="The Role of Experience Design in the Age of AI Agentic Factories" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">The Role of Experience Design in the Age of AI Agentic Factories</figcaption>
+          </figure>
+<h2>1. Redefining UX in the Age of Proxy Agents</h2>
+<p>When a person instructs an AI assistant to book flights, resolve bank charges, cancel subscriptions, or negotiate invoices, the AI agent becomes the immediate operator of the digital system while acting on the human's behalf.</p>
+<p>The customer journey expands across multiple channels and multiple autonomous actors:</p>
+<div class="callout-quote-box"><strong>Experience Design Defined:</strong></div>
+<div class="callout-quote-box">The discipline concerned with designing and evaluating how people accomplish goals through digital systems, whether they interact with those systems directly or through autonomous agents acting on their behalf.</div>
+<h2>2. The Three Scopes of Experience Design</h2>
+<p>Experience design preserves traditional UX fundamentals while expanding into three synchronized domains:</p>
+<h3>1. Humans Interacting with Digital Products (Traditional UX & Generative UIs)</h3>
+<p>Traditional usability, accessibility, and visual hierarchy remain essential. However, generative AI introduces novel interaction boundaries:</p>
+<ul>
+<li>When should an agent execute autonomously without confirmation?</li>
+<li>When must an agent yield control and ask for clarification?</li>
+<li>What parameters belong in the agent's context window, and how does the human audit or roll back autonomous actions?</li>
+</ul>
+<h3>2. Agents Using Digital Systems on Behalf of People (Agent Experience - AX)</h3>
+<p>What produces optimal ergonomics for human perception (typography, whitespace, micro-interactions) differs fundamentally from what optimizes AI interaction (structured JSON-LD, deterministic APIs, clean DOM semantics). Designing interfaces for machine comprehension defines the emerging sub-discipline of <strong>Agent Experience (AX)</strong>.</p>
+<h3>3. People and Agents Collaborating Within the Same Journey</h3>
+<p>The most complex design challenges occur during task handoffs between humans and AI agents. A product might function flawlessly when used by humans alone or agents alone, yet break when control passes between them (e.g., authentication barriers, missing password extensions inside embedded webviews, and broken progress states).</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/experiencedesign/experience-design-challenges.webp" alt="Three Core Scopes and Challenges of Modern Experience Design" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Three Core Scopes and Challenges of Modern Experience Design</figcaption>
+          </figure>
+<h2>3. Human-Centered Design Remains Non-Negotiable</h2>
+<p>Dropping "User" does not mean abandoning human empathy. The ultimate success criterion of any automated system remains whether the human behind the agent achieved their goal safely, efficiently, and with full transparency.</p>
+<p>Experience design broadens the systems, actors, and evaluative methods we deploy, ensuring software serves human intent across human and algorithmic touchpoints alike.</p>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>Official Publication on Nielsen Norman Group (NN/g):</strong></p>
+<p><a href="https://www.nngroup.com/articles/ux-vs-experience-design/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://www.nngroup.com/articles/ux-vs-experience-design/</a></p>
         `
       },
       {
@@ -3199,6 +3295,81 @@
         `
       },
       {
+        id: "openai-ai-training-preferences-robots-txt",
+        type: "article",
+        category: "news",
+        categoryClass: "card-theme-amber",
+        dateShamsi: "۰۹ آبان ۱۴۰۵",
+        dateGregorian: "30 Oct 2026",
+        tags: ["هوش_مصنوعی", "اوپن_ای_آی", "ربات_تکست", "گوگل", "مایکروسافت", "حریم_خصوصی"],
+        tagsFa: ["هوش_مصنوعی", "اوپن_ای_آی", "ربات_تکست", "گوگل", "مایکروسافت", "حریم_خصوصی"],
+        tagsEn: ["OpenAI", "Robots.txt", "AI Training", "Google", "Microsoft", "Web Standards"],
+        iconSvg: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>',
+        titleFa: "توافق OpenAI، گوگل و مایکروسافت برای یکپارچه‌سازی ترجیحات آموزش هوش مصنوعی در robots.txt",
+        titleEn: "Making it Easier for Websites to Express AI Training Preferences (OpenAI, Google & Microsoft)",
+        summaryFa: "OpenAI با همراهی گوگل و مایکروسافت از پشتیبانی یک سیگنال واحد در فایل robots.txt برای اعلام عدم تمایل به آموزش مدل‌های هوش مصنوعی خبر داد.",
+        summaryEn: "OpenAI, Google, and Microsoft announce voluntary support for a unified robots.txt signal allowing publishers to set AI training preferences across providers.",
+        contentFa: `
+<p>شرکت <strong>OpenAI</strong> به همراه <strong>مایکروسافت</strong> و <strong>گوگل</strong> از ابتکار مشترکی برای ساده‌سازی فرآیند اعلام ترجیحات وب‌سایت‌ها در زمینه آموزش مدل‌های هوش مصنوعی رونمایی کردند. بر اساس این توافق داوطلبانه، شرکت‌های ارائه‌دهنده هوش مصنوعی یک <strong>سیگنال واحد و مشترک در فایل `robots.txt`</strong> را به رسمیت خواهند شناخت.</p>
+<p>تا پیش از این، مدیران وب‌سایت‌ها و ناشران محتوا مجبور بودند برای تک‌تک خزنده‌ها و ربات‌های هوش مصنوعی (نظیر GPTBot، Google-Extended، CCBot و غول‌های دیگر) قوانین و خطوط جداگانه‌ای در فایل robots.txt بنویسند و مرتباً این لیست طولانی را به‌روزرسانی کنند.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/openaipref/hero.webp" alt="توافق OpenAI، مایکروسافت و گوگل بر سر سیگنال واحد robots.txt برای ترجیحات آموزش هوش مصنوعی" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">توافق OpenAI، مایکروسافت و گوگل بر سر سیگنال واحد robots.txt برای ترجیحات آموزش هوش مصنوعی</figcaption>
+          </figure>
+<h2>۱. چرا صنعت هوش مصنوعی به یک سیگنال مشترک نیاز داشت؟</h2>
+<p>با رشد انفجاری مدل‌های زبانی بزرگ، تعداد خزنده‌های جمع‌آوری داده به ده‌ها مورد رسید. برای یک ناشر یا وبمستر، پایش اینکه کدام ربات متعلق به کدام شرکت است و نوشتن دستورات عدم دسترسی (Disallow) برای هر یک از آن‌ها به یک سردرد فنی و مدیریتی تبدیل شده بود.</p>
+<p>سیگنال مشترک جدید این فرآیند را یکپارچه می‌کند:</p>
+<ul>
+<li><strong>یکبار تنظیم برای همه:</strong> وب‌سایت‌ها با تنظیم یک دستور مشترک در فایل `robots.txt`، ترجیح خود را به صورت همزمان به تمام شرکت‌های ارائه‌دهنده هوش مصنوعی مشارکت‌کننده اعلام می‌کنند.</li>
+<li><strong>کاهش اصطکاک وبمسترها:</strong> حذف نیاز به شناسایی دستی خزنده‌های جدید و پیگیری تغییر نام بات‌ها.</li>
+<li><strong>توافق میان غول‌های فناوری:</strong> همکاری OpenAI، گوگل و مایکروسافت نشان‌دهنده شکل‌گیری یک استاندارد صنعتی پذیرفته‌شده است.</li>
+</ul>
+<h2>۲. همگام با استاندارد گروه کاری IETF</h2>
+<p>این اقدام داوطلبانه برگرفته از تلاش‌های در حال انجام در <strong>کارگروه ترجیحات هوش مصنوعی (AIPREF)</strong> در سازمان بین‌المللی مهندسی اینترنت (<strong>IETF</strong>) است.</p>
+<p>OpenAI اعلام کرده است که با پیوستن به این ابتکار مشترک، تعهد خود را به مشارکت در تدوین استانداردهای جهانی وب برای تعامل سایت‌ها و مدل‌های مولد تقویت می‌کند و سایر توسعه‌دهندگان و شرکت‌های حوزه AI را نیز به احترام به این سیگنال مشترک فراخوانده است.</p>
+<h2>۳. تکلیف ابزارهای کنترلی فعلی چیست؟</h2>
+<p>نکته کلیدی در این اعلامیه این است که <strong>سیگنال مشترک جایگزین کنترل‌های قبلی نخواهد شد، بلکه مکمل آن‌هاست:</strong></p>
+<ul>
+<li>اگر سایتی بخواهد قوانین تفکیک‌شده‌تری داشته باشد (مثلاً اجازه جستجو به ربات بدهد اما آموزش مدل فونداسیون را مسدود کند)، خزنده‌های تفکیک‌شده مثل `GPTBot` و `OAI-SearchBot` همچنان به کار خود ادامه می‌دهند و به دستورات اختصاصی احترام می‌گذارند.</li>
+<li>پیاده‌سازی این سیگنال مشترک در ماه‌های آینده توسط OpenAI عملیاتی خواهد شد و گوگل نیز اعلام کرده است که در سال ۲۰۲۷ به طور کامل از این کنترل مشترک پشتیبانی خواهد کرد.</li>
+</ul>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>منبع رسمی خبر در وب‌سایت رسمی OpenAI:</strong></p>
+<p><a href="https://openai.com/index/helping-websites-express-ai-training-preferences/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://openai.com/index/helping-websites-express-ai-training-preferences/</a></p>
+        `,
+        contentEn: `
+<p>OpenAI, in collaboration with Google and Microsoft, has announced support for a <strong>common, unified signal in `robots.txt`</strong>, allowing websites and publishers to easily express their preferences regarding the use of their content for foundational generative AI training.</p>
+<p>Historically, web operators were forced to research dozens of separate crawler user-agents (such as GPTBot, Google-Extended, and others) and maintain sprawling, fragmented disallow rules across their configurations.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/openaipref/hero.webp" alt="OpenAI, Microsoft and Google standardizing AI training preferences in robots.txt" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">OpenAI, Microsoft and Google standardizing AI training preferences in robots.txt</figcaption>
+          </figure>
+<h2>1. Why a Unified AI Preferences Signal Matters</h2>
+<p>The rapid proliferation of generative AI crawlers created unsustainable operational friction for web publishers. Website operators had to independently track emerging scrapers and update disallow lists perpetually.</p>
+<p>The shared signal streamlines this dynamic:</p>
+<ul>
+<li><strong>Configure Once for Multiple Providers:</strong> Publishers communicate a uniform preference to all participating AI model providers simultaneously.</li>
+<li><strong>Reduced Maintenance Overhead:</strong> Eliminates the burden of tracking individual bot user-agents and protocol variations.</li>
+<li><strong>Industry Coalition:</strong> Endorsement by OpenAI, Microsoft, and Google establishes a robust consensus foundation.</li>
+</ul>
+<h2>2. Anchored in IETF Standards Work</h2>
+<p>This voluntary initiative builds directly upon the ongoing efforts of the <strong>Internet Engineering Task Force (IETF) AI Preferences (AIPREF) working group</strong>.</p>
+<p>OpenAI emphasized that participating in this shared signal advances its long-term commitment to open web standards, urging other AI providers and crawling organizations to adopt and respect the common signal.</p>
+<h2>3. Coexistence with Existing Crawler Controls</h2>
+<p>The introduction of a common signal does not deprecate existing granular crawler controls:</p>
+<ul>
+<li>Established bot-specific directives (e.g., granular disallow rules for `GPTBot` vs. `OAI-SearchBot`) remain fully operational and respected.</li>
+<li>Publishers retain complete flexibility to permit real-time search indexing while restricting foundational pre-training.</li>
+<li>OpenAI plans to roll out implementation of the signal in the coming months, while Google has committed to full operational integration by 2027.</li>
+</ul>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>Official Announcement on OpenAI Index:</strong></p>
+<p><a href="https://openai.com/index/helping-websites-express-ai-training-preferences/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://openai.com/index/helping-websites-express-ai-training-preferences/</a></p>
+        `
+      },
+      {
         id: "realcompanion-memory-benchmark",
         type: "article",
         category: "news",
@@ -3254,6 +3425,206 @@
 <div class="callout-quote-box">With aggregate metrics proving so deceptive, how do you evaluate production memory systems or RAG pipelines in real deployments?</div>
 <hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
 <p>📎 <strong>Paper on arXiv:</strong> <a href="https://arxiv.org/abs/2610.01780" target="_blank" style="color: var(--primary); text-decoration: underline;">https://arxiv.org/abs/2610.01780</a></p>
+        `
+      },
+      {
+        id: "your-billing-migration-is-really-a-state-machine",
+        type: "article",
+        category: "news",
+        categoryClass: "card-theme-amber",
+        dateShamsi: "۷ آبان ۱۴۰۵",
+        dateGregorian: "29 Oct 2026",
+        tags: ["UX_سبد_خرید", "مهندسی_نرم‌افزار"],
+        tagsFa: ["UX_سبد_خرید", "مهندسی_نرم‌افزار"],
+        tagsEn: ["UX_سبد_خرید", "مهندسی_نرم‌افزار"],
+        iconSvg: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>',
+        titleFa: "مهاجرت صورت حساب شما واقعاً یک ماشین دولتی است",
+        titleEn: "Your Billing Migration is Really a State Machine",
+        summaryFa: "مشتری صندوق ورودی خود را باز می کند و دو فاکتور برای یک اشتراک پیدا می کند. مشتری دیگری در گزارش نگهداری به صورت ریزش نشان داده می شود، با این تفاوت که هرگز ...",
+        summaryEn: "Your Billing Migration is Really a State Machine",
+        contentFa: `
+<p>مشتری صندوق ورودی خود را باز می کند و دو فاکتور برای یک اشتراک پیدا می کند. مشتری دیگری در گزارش نگهداری به صورت ریزش نشان داده می شود، با این تفاوت که هرگز لغو نشده است. پرداخت آنها ناموفق بود، اشتراک در سیستم صورتحساب از بین رفت، و وقفه به عنوان مشتری گمشده ثبت شد. من معماری را در مهاجرتی هدایت کردم که هر دوی این اشکالات را ایجاد کرد.</p>
+        `,
+        contentEn: `
+<p>مشتری صندوق ورودی خود را باز می کند و دو فاکتور برای یک اشتراک پیدا می کند. مشتری دیگری در گزارش نگهداری به صورت ریزش نشان داده می شود، با این تفاوت که هرگز لغو نشده است. پرداخت آنها ناموفق بود، اشتراک در سیستم صورتحساب از بین رفت، و وقفه به عنوان مشتری گمشده ثبت شد. من معماری را در مهاجرتی هدایت کردم که هر دوی این اشکالات را ایجاد کرد.</p>
+        `
+      },
+      {
+        id: "the-tldr-on-figma-weave",
+        type: "article",
+        category: "tutorials",
+        categoryClass: "card-theme-emerald",
+        dateShamsi: "۰۹ آبان ۱۴۰۵",
+        dateGregorian: "30 Oct 2026",
+        tags: ["فیگما", "طراحی_رابط_کاربری", "هوش_مصنوعی", "ورک_فلو", "Figma_Weave", "دیزاین"],
+        tagsFa: ["فیگما", "طراحی_رابط_کاربری", "هوش_مصنوعی", "ورک_فلو", "Figma_Weave", "دیزاین"],
+        tagsEn: ["Figma", "UI Design", "AI Workflows", "Figma Weave", "Creative Tools"],
+        iconSvg: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>',
+        titleFa: "خلاصه فیگما ویو (Figma Weave): تکرارپذیر کردن فرآیند خلاقانه طراحی با هوش مصنوعی",
+        titleEn: "The TL;DR on Figma Weave: Make Your Creative Process Repeatable",
+        summaryFa: "فیگما با معرفی Weave ابزارهای تولید و ویرایش هوش مصنوعی را در قالب نودها و ورک‌فلوهای متصل و قابل استفاده مجدد در کنار فایل‌های طراحی قرار داد.",
+        summaryEn: "Figma Weave brings generative AI and editing tools into connected, reusable node-based workflows directly alongside your design frames.",
+        contentFa: `
+<p>فیگما با معرفی <strong>Figma Weave</strong>، نسل جدیدی از ابزارهای تولید محتوا و ویرایش مبتنی بر هوش مصنوعی را در قالب ورک‌فلوهای متصل و با قابلیت استفاده مجدد عرضه کرده است. این قابلیت فرآیندی را در اختیار تیم‌های طراحی قرار می‌دهد که می‌توانند آن را شکل دهند، اصلاح کنند و بارها و بارها تکرار نمایند.</p>
+<p>اگر تیم‌های خلاق و دیزاینرها تا پیش از این زمان زیادی را صرف جابه‌جایی میان ایده‌پردازی، ابزارهای پراکنده AI و تولید خروجی نهایی می‌کردند، اکنون Weave این فرآیند را دقیقاً در کنار فریم‌های طراحی در فیگما قرار می‌دهد.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/hero.webp" alt="معرفی رسمی Figma Weave برای اتصال ابزارهای هوش مصنوعی به بوم طراحی" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">معرفی رسمی Figma Weave برای اتصال ابزارهای هوش مصنوعی به بوم طراحی</figcaption>
+          </figure>
+<h2>مفاهیم و اصطلاحات کلیدی در Figma Weave</h2>
+<p>برای کار با فیگما ویو، درک چهار مفهوم اصلی ضروری است:</p>
+<ul>
+<li><strong>نود (Node):</strong> یک بلوک سازنده مستقل روی کانواس ویو برای افزودن تصویر، پرامپت، تولید محتوا یا اعمال ادیت.</li>
+<li><strong>ورک‌فلو (Workflow):</strong> مجموعه‌ای از نودهای متصل به هم که مواد اولیه شما را به یک خروجی نهایی و بی‌نقص تبدیل می‌کنند.</li>
+<li><strong>شاخه (Branch):</strong> یک مسیر مجزا در ورک‌فلو برای کاوش در مسیرهای بصری مختلف از یک نقطه شروع مشترک.</li>
+<li><strong>ابزار ویو (Weave Tool):</strong> یک ورک‌فلو بسته‌بندی‌شده که هم‌تیمی‌ها می‌توانند آن را بدون درگیر شدن با نودهای زیرین اجرا کنند.</li>
+</ul>
+<h2>۱. کاوش در جهت‌های بصری مختلف (Explore More Directions)</h2>
+<p>فرض کنید قرار است یک کالکشن محصول جدید عرضه کنید و به تصاویر متعددی در موقعیت‌های گوناگون نیاز دارید، اما امکان عکاسی اختصاصی برای هر محصول وجود ندارد؛ یا می‌خواهید یک کمپین تبلیغاتی را برای پلتفرم‌ها و مارکت‌های مختلف بازتولید کنید.</p>
+<p>فیگما ویو به شما اجازه می‌دهد چندین ایده را در کنار هم روی کانواس توسعه دهید. هر مسیر جدید (Branch) از همان نقطه آغازین منشعب می‌شود؛ برای مثال، عکسی از یک کوله‌پشتی کوهنوردی را به دو نود ادیتور هوش مصنوعی متصل می‌کنید:</p>
+<ul>
+<li>شاخه اول: تصویر را در یک جنگل بارانی قرار می‌دهد.</li>
+<li>شاخه دوم: تصویر را روی قله یک کوه برفی مستقر می‌کند.</li>
+</ul>
+<p>شما می‌توانید همان پرامپت را به چندین مدل مختلف هوش مصنوعی بدهید، خروجی‌ها را در کنار هم مقایسه کنید و سپس بهترین تصویر را به ویدیو تبدیل نمایید.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/explore-branches.webp" alt="کاوش همزمان در چندین شاخه بصری مختلف و مقایسه مدل‌های هوش مصنوعی در Weave" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">کاوش همزمان در چندین شاخه بصری مختلف و مقایسه مدل‌های هوش مصنوعی در Weave</figcaption>
+          </figure>
+<h2>۲. کنترل دقیق بر روی جزئیات (Take Control of Details)</h2>
+<p>رسیدن به یک خروجی ایده‌آل فقط به نوشتن یک پرامپت دیگر خلاصه نمی‌شود. ابزارهای ویرایش Figma Weave به عنوان نودهای مجزا روی بوم قرار می‌گیرند تا بتوانید بر ریزترین جزئیات مسلط باشید:</p>
+<ul>
+<li>حذف پس‌زمینه تصاویر با یک کلیک.</li>
+<li>تنظیم دقیق نور، هارمونی رنگ و عمق صحنه.</li>
+<li>بازسازی و تغییر مقیاس تصاویر برای فرمت‌های مختلف شبکه‌های اجتماعی.</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/control-details.webp" alt="کنترل دقیق و گره‌به‌گره بر روی جزئیات ادیت و تولید تصویر در Figma Weave" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">کنترل دقیق و گره‌به‌گره بر روی جزئیات ادیت و تولید تصویر در Figma Weave</figcaption>
+          </figure>
+<h2>۳. تکرار فرآیندهای موفق در سراسر تیم (Repeat What Works)</h2>
+<p>یک ورک‌فلو موفق، تمام تصمیمات و انتخاب‌های هوشمندانه‌ای را که طراح در طول مسیر گرفته است ثبت و حفظ می‌کند. به اشتراک‌گذاری این ورک‌فلو به هم‌تیمی‌ها اجازه می‌دهد از همان فرمول موفق استفاده کنند.</p>
+<p>برای مثال، اگر شما ورک‌فلویی بسازید که پس‌زمینه عکس محصول را حذف کرده، آن را در یک دکور برند قرار دهد و برای استوری اینستاگرام برش بزند، هم‌تیمی شما در لانچ محصول بعدی کافی است عکس محصول جدید را جایگزین کند تا تمام مراحل با ثبات کامل اعمال شوند.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/repeat-workflows.webp" alt="اشتراک‌گذاری ورک‌فلوهای طراحی با هم‌تیمی‌ها برای تولید سریع کمپین‌ها" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">اشتراک‌گذاری ورک‌فلوهای طراحی با هم‌تیمی‌ها برای تولید سریع کمپین‌ها</figcaption>
+          </figure>
+<h2>۴. ابزارهای کامیونیتی ویو (Weave Tools)</h2>
+<p>فیگما امکان بسته‌بندی ورک‌فلوها در قالب ابزارهای آماده کامیونیتی را فعال کرده است. پنج ابزار محبوب معرفی‌شده عبارتند از:</p>
+<ol>
+<li>تبدیل مودبورد به رندر سه‌بعدی اتاق و دکوراسیون.</li>
+<li>تطبیق تصاویر با فرمت‌های تبلیغاتی چندگانه.</li>
+<li>تولید ویدیوهای متحرک از تصاویر ثابت.</li>
+<li>پیش‌نمایش طرح‌های دیزاین روی موکاپ‌های واقعی.</li>
+<li>بهینه‌ساز هوشمند پرامپت‌ها.</li>
+</ol>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/weave-tools.webp" alt="ابزارهای آماده کامیونیتی فیگما برای استفاده مستقیم بدون نیاز به ساخت نودها" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">ابزارهای آماده کامیونیتی فیگما برای استفاده مستقیم بدون نیاز به ساخت نودها</figcaption>
+          </figure>
+<h2>۵. چگونه بیشترین بهره را از Figma Weave ببریم؟</h2>
+<p>برای گرفتن بهترین نتیجه از فیگما ویو، رعایت سه نکته ضروری است:</p>
+<ul>
+<li><strong>پرامپت‌های دقیق بنویسید:</strong> نود <strong>Run Any LLM</strong> به شما اجازه می‌دهد از یک مدل هوش مصنوعی بخواهید دستورات متنی شما را اصلاح و دقیق‌تر کند.</li>
+<li><strong>استفاده از متغیرهای پرامپت (Prompt Variables):</strong> با استفاده از متغیرها، می‌توانید بخشی از دستور (مثلاً رنگ محصول یا فصل سال) را بدون بازنویسی کل پرامپت عوض کنید.</li>
+<li><strong>نقش‌های شفاف برای تصاویر رفرنس:</strong> وقتی تصویری را به عنوان مرجع متصل می‌کنید، مشخص کنید که مدل باید پالت رنگی آن را بردارد، ساختار ترکیب‌بندی را کپی کند یا کاراکتر آن را حفظ کند.</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/prompt-enhancer.webp" alt="نودهای بهینه‌ساز پرامپت و تنظیم متغیرهای متنی برای تولید پایدار محتوا" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">نودهای بهینه‌ساز پرامپت و تنظیم متغیرهای متنی برای تولید پایدار محتوا</figcaption>
+          </figure>
+<h2>نتیجه‌گیری</h2>
+<p>فیگما ویو دیزاین و پروداکشن را به یکدیگر پیوند داده است؛ به‌طوری‌که تیم‌های طراحی دیگر زمان خود را برای آزمون‌وخطاهای تکراری هدر نمی‌دهند و می‌توانند بر خلق ایده‌های جسورانه و باکیفیت تمرکز کنند.</p>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>منبع رسمی مقاله در وبلاگ رسمی فیگما (Figma Blog):</strong></p>
+<p><a href="https://www.figma.com/blog/the-tldr-on-figma-weave/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://www.figma.com/blog/the-tldr-on-figma-weave/</a></p>
+        `,
+        contentEn: `
+<p>Figma Weave unites generative AI and creative editing tools into connected, reusable node-based workflows directly alongside your Figma Design frames. It provides creative teams with a transparent, controllable process they can shape, refine, and repeat across campaigns and product launches.</p>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/hero.webp" alt="Figma Weave official announcement and creative node workflow" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Figma Weave official announcement and creative node workflow</figcaption>
+          </figure>
+<h2>Key Concepts to Know in Figma Weave</h2>
+<p>Working with Weave centers around four fundamental building blocks:</p>
+<ul>
+<li><strong>Node:</strong> An individual building block on the canvas for adding prompts, ingesting assets, generating media, or applying direct image adjustments.</li>
+<li><strong>Workflow:</strong> Interconnected nodes that transform raw concepts and photos into finished marketing or design deliverables.</li>
+<li><strong>Branch:</strong> A separate pathway branching off from an existing node to explore diverse art directions while keeping the original baseline intact.</li>
+<li><strong>Weave Tool:</strong> A packaged workflow allowing team members to execute sophisticated pipelines with their own assets without configuring underlying nodes.</li>
+</ul>
+<h2>1. Explore More Directions</h2>
+<p>Launching a multi-channel campaign often requires tailoring visuals to diverse market demographics and aspect ratios without scheduling new studio photoshoots every time.</p>
+<p>Weave enables designers to cultivate multiple directions in parallel on the same canvas:</p>
+<ul>
+<li>Connecting a single product photo into separate AI image-editing nodes (e.g., placing a backpack in an alpine snowstorm versus an autumn forest).</li>
+<li>Comparing multiple generative models side by side with identical prompt parameters to select optimal textural quality.</li>
+<li>Converting static rendered branches directly into dynamic video clips.</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/explore-branches.webp" alt="Exploring multiple visual branches simultaneously in Figma Weave" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Exploring multiple visual branches simultaneously in Figma Weave</figcaption>
+          </figure>
+<h2>2. Take Control of the Details</h2>
+<p>High-fidelity creative direction demands precision beyond conversational prompting. Figma Weave represents editing capabilities as discrete modular nodes:</p>
+<ul>
+<li>Seamless background segmentation and replacement.</li>
+<li>Precise depth mapping, color grading, and focal lighting adjustments.</li>
+<li>Multi-format canvas re-framing preserving core subject geometry.</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/control-details.webp" alt="Granular node-by-node parameter control in Figma Weave" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Granular node-by-node parameter control in Figma Weave</figcaption>
+          </figure>
+<h2>3. Repeat What Works Across the Team</h2>
+<p>A successful workflow captures the exact sequence of creative micro-decisions that led to a compelling result. By sharing workflows or publishing them as Weave Tools, teams standardize creative operations:</p>
+<ul>
+<li>Substituting fresh product assets into proven campaign templates while maintaining strict brand guidelines.</li>
+<li>Packaging complex pipelines into simplified single-click tools for non-technical stakeholders.</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/repeat-workflows.webp" alt="Sharing reusable team workflows for scalable creative production" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Sharing reusable team workflows for scalable creative production</figcaption>
+          </figure>
+<h2>4. Community Weave Tools</h2>
+<p>The Figma Community ecosystem now supports publishing and discovering pre-packaged Weave Tools, unlocking immediate workflows inside Figma Design:</p>
+<ul>
+<li>Generating photorealistic 3D interior renders directly from 2D moodboards.</li>
+<li>Automated multi-platform social asset resizing and copy adaptation.</li>
+<li>High-fidelity generative pattern and product mockup synthesis.</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/weave-tools.webp" alt="Community-published Figma Weave tools running directly inside Figma" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Community-published Figma Weave tools running directly inside Figma</figcaption>
+          </figure>
+<h2>5. Getting the Most Out of Weave</h2>
+<p>To maximize generative fidelity within Weave workflows:</p>
+<ul>
+<li><strong>Specific Prompting:</strong> Leverage the <strong>Prompt Enhancer Node</strong> or <strong>Run Any LLM Node</strong> to expand and clarify prompt semantics.</li>
+<li><strong>Prompt Variables:</strong> Parametrize inputs (e.g., product colorways, lighting conditions, or seasonal palettes) to automate variations without prompt rewriting.</li>
+<li><strong>Explicit Reference Roles:</strong> Clearly designate reference image inputs (compositional structure, color palette, or character identity).</li>
+</ul>
+
+          <figure style="margin: 2.25rem 0; text-align: center;">
+            <img src="assets/figmaweave/prompt-enhancer.webp" alt="Prompt variables and prompt enhancement nodes in Figma Weave" style="max-width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border); box-shadow: 0 8px 25px rgba(0,0,0,0.25);" loading="lazy" />
+            <figcaption style="margin-top: 0.75rem; font-size: 0.84rem; color: var(--text-muted); text-align: center; line-height: 1.6;">Prompt variables and prompt enhancement nodes in Figma Weave</figcaption>
+          </figure>
+<h2>Summary</h2>
+<p>Figma Weave bridges the gap between exploratory design and repetitive creative production, enabling teams to scale their creative output without sacrificing artisanal control.</p>
+<hr style='border: none; border-top: 1px solid var(--border); margin: 1.5rem 0;'>
+<p>📎 <strong>Official Article on Figma Blog:</strong></p>
+<p><a href="https://www.figma.com/blog/the-tldr-on-figma-weave/" target="_blank" style="color: var(--primary); text-decoration: underline;">https://www.figma.com/blog/the-tldr-on-figma-weave/</a></p>
         `
       }
     ];
